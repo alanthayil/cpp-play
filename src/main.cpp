@@ -1,16 +1,21 @@
 #include <iostream>
 
-struct Point {
-    double x, y, z;
-};
+void incrementByValue(int x) {
+    x = x + 1;
+}
 
-int main(){
-    Point p{1.0, 2.0, 3.0};
+void incrementByReference(int& x) {
+    x = x + 1;
+}
 
-    std::cout << "Point : ("
-              << p.x << ", "
-              << p.y << ", "
-              << p.z << ")" << std:: endl;
+int main() {
+    int a = 5;
+
+    incrementByValue(a);
+    std::cout << "After value: " << a << std::endl;
+
+    incrementByReference(a);
+    std::cout << "After reference: " << a << std::endl;
 
     return 0;
 }
