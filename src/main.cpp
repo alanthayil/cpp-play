@@ -1,13 +1,12 @@
 #include <iostream>
 
 int main() {
-    int a = 10;
-    int* ptr = &a;
+    int a = 5;
+    std::cout << "Stack value: " << a << std::endl;
 
-    std::cout << "a: " << a << std::endl;
-    std::cout << "Address of a: " << &a << std::endl;
-    std::cout << "Pointer value: " << ptr << std::endl;
-    std::cout << "Value via pointer: " << *ptr << std::endl;
+    int* p = new int(42);
+    std::cout << "Heap value: " << *p << std::endl;
+    delete p;
 
     return 0;
 }
