@@ -1,21 +1,13 @@
 #include <iostream>
 
-void incrementByValue(int x) {
-    x = x + 1;
-}
-
-void incrementByReference(int& x) {
-    x = x + 1;
-}
-
 int main() {
-    int a = 5;
+    int a = 10;
+    int* ptr = &a;
 
-    incrementByValue(a);
-    std::cout << "After value: " << a << std::endl;
-
-    incrementByReference(a);
-    std::cout << "After reference: " << a << std::endl;
+    std::cout << "a: " << a << std::endl;
+    std::cout << "Address of a: " << &a << std::endl;
+    std::cout << "Pointer value: " << ptr << std::endl;
+    std::cout << "Value via pointer: " << *ptr << std::endl;
 
     return 0;
 }
